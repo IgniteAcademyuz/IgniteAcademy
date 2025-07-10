@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ignite Academy</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+      color: #333;
+    }
+    header {
+      background: #FF6B00;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+    }
+    nav {
+      background: #333;
+      color: white;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+      display: block;
+    }
+    nav a:hover {
+      background: #444;
+    }
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+      background: white;
+      margin-top: 10px;
+      border-radius: 5px;
+    }
+    .courses, .teachers, .schedule, .contacts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #fafafa;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .btn {
+      display: inline-block;
+      background: #FF6B00;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      margin-top: 10px;
+      border-radius: 3px;
+    }
+    .btn:hover {
+      background: #e55a00;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #333;
+      color: white;
+      margin-top: 20px;
+    }
+    @media(max-width: 600px){
+      nav{
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header style="display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap;">
+  <img src="logo.png" alt="Ignite Academy Logo" style="height:80px;">
+  <div>
+    <h1>Ignite Academy</h1>
+    <p>Learn. Grow. Excel.</p>
+  </div>
+</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#courses">Courses</a>
+  <a href="#teachers">Teachers</a>
+  <a href="#schedule">Schedule</a>
+  <a href="#contacts">Contact</a>
+</nav>
+
+<section id="about">
+  <h2>About Us</h2>
+  <p>Ignite Academy — это место где вас ждёт уверенные шаги к светлому будущее. </p>
+</section>
+
+<section id="courses">
+  <h2>Our Courses</h2>
+  <div class="courses">
+    <div class="card">
+      <h3>English Courses</h3>
+      <ul>
+        <li>General English</li>
+        <li>IELTS Preparation</li>
+        <li>Multi-Level Courses</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Korean Courses</h3>
+      <ul>
+        <li>Korean Grammar</li>
+        <li>TOPIK Course</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="teachers">
+  <h2>Our Teachers</h2>
+  <div class="teachers">
+    <div class="card">
+      <h3>Машарипова Замира Бекназаровна</h3>
+      <p>Учительница английского языка школы №12, талантливая и требовательная. 20 лет опыта в этой сфере, обладательница множества сертификатов.</p>
+    </div>
+    <div class="card">
+      <h3>Эркаева Саида Рустамбек кизи</h3>
+      <p>Студентка, талантливый преподаватель корейского языка, обладательница TOPIK - 4.</p>
+    </div>
+  </div>
+</section>
+
+<section id="schedule">
+  <h2>Schedule</h2>
+  <div class="schedule">
+    <div class="card">
+      <h3>English</h3>
+      <p>General English, IELTS, Multi-Level Courses</p>
+      <p><strong>Days:</strong> Mon, Wed, Fri</p>
+      <p><strong>Time:</strong> 18:00–19:30</p>
+    </div>
+    <div class="card">
+      <h3>Korean</h3>
+      <p>Grammar and TOPIK Course</p>
+      <p><strong>Days:</strong> Sat, Sun</p>
+      <p><strong>Time:</strong> 12:00–14:00</p>
+    </div>
+  </div>
+</section>
+
+<section id="contacts">
+  <h2>Contact Us</h2>
+  <div class="contacts">
+    <div class="card">
+      <p><strong>Address:</strong><br>Хорезмская область, Ургенч район</p>
+      <p><strong>Phone:</strong><br><a href="tel:+998977900255">+998 97 790 0255</a></p>
+      <p><strong>Telegram:</strong><br><a href="https://t.me/M_Zamira82">@M_Zamira82</a></p>
+      <p><strong>Instagram:</strong><br><a href="https://instagram.com/Ignite_Academy_IA">@Ignite_Academy_IA</a></p>
+      <a class="btn" href="https://t.me/M_Zamira82">Записаться сейчас</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 Ignite Academy. All rights reserved.
+</footer>
+
+</body>
+</html>
