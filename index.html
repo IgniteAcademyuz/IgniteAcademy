@@ -1,91 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ignite Academy</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f5f5f5;
-      color: #333;
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ignite Academy</title>
+<style>
+  * {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f5f5f5;
+    color: #333;
+  }
+  header {
+    background: linear-gradient(90deg, #FF6B00, #ff8c42);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    animation: fadeDown 1s ease-out;
+  }
+  header img {
+    height: 80px;
+    transition: transform 0.3s ease;
+  }
+  header img:hover {
+    transform: scale(1.1);
+  }
+  nav {
+    background: #333;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeDown 1.2s ease-out;
+  }
+  nav a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 18px;
+    transition: background 0.3s, transform 0.3s;
+  }
+  nav a:hover {
+    background: #ff6b00;
+    transform: translateY(-2px);
+  }
+  section {
+    max-width: 1000px;
+    margin: auto;
+    padding: 40px 20px;
+    background: white;
+    margin-top: 20px;
+    border-radius: 8px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+  }
+  section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .courses, .teachers, .schedule, .contacts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  .card {
+    background: #fafafa;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  }
+  .btn {
+    display: inline-block;
+    background: #FF6B00;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin-top: 10px;
+    border-radius: 3px;
+    transition: background 0.3s;
+  }
+  .btn:hover {
+    background: #e55a00;
+  }
+  footer {
+    text-align: center;
+    padding: 15px;
+    background: #333;
+    color: white;
+    margin-top: 20px;
+    animation: fadeUp 1s ease-out;
+  }
+  @media(max-width: 600px){
+    nav{
+      flex-direction: column;
     }
-    header {
-      background: #FF6B00;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-    }
-    nav {
-      background: #333;
-      color: white;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      padding: 10px 15px;
-      display: block;
-    }
-    nav a:hover {
-      background: #444;
-    }
-    section {
-      max-width: 1000px;
-      margin: auto;
-      padding: 20px;
-      background: white;
-      margin-top: 10px;
-      border-radius: 5px;
-    }
-    .courses, .teachers, .schedule, .contacts {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background: #fafafa;
-      padding: 15px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-    }
-    .btn {
-      display: inline-block;
-      background: #FF6B00;
-      color: white;
-      padding: 10px 20px;
-      text-decoration: none;
-      margin-top: 10px;
-      border-radius: 3px;
-    }
-    .btn:hover {
-      background: #e55a00;
-    }
-    footer {
-      text-align: center;
-      padding: 15px;
-      background: #333;
-      color: white;
-      margin-top: 20px;
-    }
-    @media(max-width: 600px){
-      nav{
-        flex-direction: column;
-      }
-    }
-  </style>
+  }
+  @keyframes fadeDown {
+    from {opacity:0; transform: translateY(-20px);}
+    to {opacity:1; transform: translateY(0);}
+  }
+  @keyframes fadeUp {
+    from {opacity:0; transform: translateY(20px);}
+    to {opacity:1; transform: translateY(0);}
+  }
+</style>
 </head>
 <body>
 
-<header style="display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap;">
-  <img src="logo.png" alt="Ignite Academy Logo" style="height:80px;">
+<header>
+  <img src="logo.png" alt="Ignite Academy Logo">
   <div>
     <h1>Ignite Academy</h1>
     <p>Face the brightest future with us.</p>
@@ -102,7 +139,7 @@
 
 <section id="about">
   <h2>About Us</h2>
-  <p>Ignite Academy — это место где вас ждёт уверенные шаги к светлому будущее. </p>
+  <p>Ignite Academy — это место где вас ждёт уверенные шаги к светлому будущему.</p>
 </section>
 
 <section id="courses">
@@ -131,15 +168,15 @@
   <div class="teachers">
     <div class="card">
       <h3>Машарипова Замира Бекназаровна</h3>
-      <p>Учительница английского языка школы №12, талантливая и требовательная. 20 лет опыта в этой сфере, обладательница множества сертификатов как TKT C1 уровня.</p>
+      <p>Учительница английского языка школы №12, талантливая и требовательная. 20 лет опыта, множество сертификатов TKT C1.</p>
     </div>
     <div class="card">
       <h3>Эркаева Саида Рустамбек кизи</h3>
-      <p>Студентка, талантливый преподавательца корейского языка, обладательница TOPIK - 4.</p>
+      <p>Студентка, талантливый преподаватель корейского языка, обладательница TOPIK - 4.</p>
     </div>
-   <div class="card">
+    <div class="card">
       <h3>Бекназаровна Рахима Рахматулло кизи</h3>
-      <p>Талантливая, требовательная преподавательница с 5 лет опытом и сертификатами как Multi-Level B2 уровня.</p>
+      <p>Требовательная преподавательница с 5 лет опытом и сертификатами Multi-Level B2 уровня.</p>
     </div>
   </div>
 </section>
@@ -178,6 +215,20 @@
 <footer>
   &copy; 2025 Ignite Academy. All rights reserved.
 </footer>
+
+<script>
+  const sections = document.querySelectorAll('section');
+  const revealOnScroll = () => {
+    sections.forEach(sec => {
+      const secTop = sec.getBoundingClientRect().top;
+      if (secTop < window.innerHeight - 50) {
+        sec.classList.add('visible');
+      }
+    });
+  };
+  window.addEventListener('scroll', revealOnScroll);
+  revealOnScroll();
+</script>
 
 </body>
 </html>
